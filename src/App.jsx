@@ -9,14 +9,16 @@ import ResourceDisplay from "./components/ResourceDisplay";
 
 function App() {
   let [Modules, setModules] = useState([
-    "Introduction to Python",
-    "Engineering Mathematics II",
+    // "Introduction to Python",
+    // "Engineering Mathematics II",
   ]);
   let [Links, setLinks] = useState([
-    { url: "https://www.google.com/", url_name: "Google" },
-    { url: "https://www.youtube.com/", url_name: "YouTube" },
+    // { url: "https://www.google.com/", url_name: "Google" },
+    // { url: "https://www.youtube.com/", url_name: "YouTube" },
   ]);
-  let [Resources, setResources] = useState(["Python Book", "React Roadmap"]);
+  let [Resources, setResources] = useState([
+    // "Python Book", "React Roadmap"
+  ]);
 
   let emptyImage =
     Links.length === 0 && Resources.length === 0 ? <EmptyImage /> : null;

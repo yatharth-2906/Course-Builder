@@ -4,6 +4,7 @@ import { Dropdown, Modal } from "react-bootstrap";
 import { IoIosLink } from "react-icons/io";
 import { TfiUpload } from "react-icons/tfi";
 import { HiOutlineMenu } from "react-icons/hi";
+import { Input } from "@chakra-ui/react";
 
 function Header(props) {
   const [show, setShow] = useState(false);
@@ -33,7 +34,7 @@ function Header(props) {
   const addLink = () => {
     const url = document.getElementById("url").value;
     const url_name = document.getElementById("url_name").value;
-    const obj = { url: url, name: url_name };
+    const obj = { url: url, url_name: url_name };
     // console.log(new_module);
     let temp = [...props.Links, obj];
     // console.log(temp);
@@ -53,9 +54,20 @@ function Header(props) {
   const fileInputRef = useRef();
 
   const handleButtonClick = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.click();
-    }
+    var input = document.createElement("input");
+    input.type = "file";
+    input.click();
+
+    input.onchange = (e) => {
+      var file = e.target.files[0];
+      // console.log(file);
+      let temp = [...props.Resources, file.name];
+      // console.log(temp);
+      props.setResources(temp);
+    };
+    // if (fileInputRef.current) {
+    //   fileInputRef.current.click();
+    // }
   };
 
   const handleFileChange = (event) => {
@@ -170,18 +182,18 @@ function Header(props) {
             <TfiUpload className={styles.icon_space} />
             <button
               variant="primary"
-              onClick={handleShow2}
+              onClick={handleButtonClick}
               className="btn btn-light"
             >
               Upload
             </button>
-            {/* <input
+            <input
               type="file"
               ref={fileInputRef}
               accept=".pdf|audio/*|video/*|image/*|"
               style={{ display: "none" }}
               onChange={handleFileChange}
-            /> */}
+            />
 
             <Modal show={show2} onHide={handleClose2}>
               <Modal.Header closeButton>
