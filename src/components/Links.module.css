@@ -1,0 +1,68 @@
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.item_container{
+  height: 50px;
+  width: 80vw;
+  margin: 20px;
+  border: 1px solid grey;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.course_menu{
+  margin-left: calc(70% - 20px);
+}
+
+.icon{
+  margin: 0px 20px;
+  color: aqua;
+}
+
+.dropdown{
+  background-color: transparent;
+  border: 0;
+  width: 20px;
+  color: black; 
+}
+
+.dropdown::after{
+  display: none !important;
+}
+
+.red_color{
+  color: red;
+}
+
+.icon_padding{
+  margin: 0 10px;
+}
+
+.course_name{
+  margin: 0;
+  padding: 0;
+  width: 20%;
+}
+h6{
+  width: 100%;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.delete_btn{
+  color: red;
+}
