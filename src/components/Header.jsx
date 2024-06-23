@@ -33,7 +33,7 @@ function Header(props) {
   const addLink = () => {
     const url = document.getElementById("url").value;
     const url_name = document.getElementById("url_name").value;
-    const obj = { url: url, name: url_name };
+    const obj = { url: url, url_name: url_name };
     // console.log(new_module);
     let temp = [...props.Links, obj];
     // console.log(temp);
